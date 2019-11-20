@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ProviderImage = ({ image, ...props }) => {
-  return <img src={image} alt="Profile Image" />;
+const Provider = ({ name,uri, ...props }) => {
+  return (
+    <div class="provider">
+      <Link to="{uri}"/>
+      <snap>{name}</snap>
+    </div>
+  )
+  
 };
 
-export default ProviderImage;
+export default Provider;

@@ -1,24 +1,6 @@
 import React, { Component } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-
-// import Button from "./atoms/Button";
-// import Label from "./atoms/Label";
-// import TextInput from "./atoms/TextInput";
-// const SearchBoard = () => {
-//   {
-//     return (
-//       <div>
-//         <Button></Button>
-//         <Label>Search Movie</Label>
-//         <TextInput></TextInput>
-//       </div>
-//     );
-//   }
-// };
-// export default SearchBoard;
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
@@ -39,7 +21,22 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function UncontrolledTextField() {
+const Search = (props) => {
+  const [searchValue, setSearchValue] = useState("");
+  
+  const handleSearchInputChanges = (e) => {
+    setSearchValue(e.target.value);
+  }
+
+  const resetInputField = () => {
+    setSearchValue("")
+  }
+
+  const callSearchFunction = (e) => {
+    e.preventDefault();
+    props.search(searchValue);
+    resetInputField();
+  }
   const classes = useStyles();
 
   return (
@@ -50,12 +47,16 @@ export default function UncontrolledTextField() {
           label="Search field"
           type="search"
           className={classes.textField}
+          value={searchValue}
+          onChange={handleSearchInputChanges}
           margin="normal"
         />
-        <Button variant="contained" className={classes.button}>
-          Default
+        <Button onClick={callSearchFunction} variant="contained" className={classes.button}>
+          SEARCH
         </Button>
       </div>
     </form>
   );
 }
+
+export default Search;

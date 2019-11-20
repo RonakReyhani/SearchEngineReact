@@ -10,44 +10,44 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 
+const DEFAULT_PLACEHOLDER_IMAGE =
+  "https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@._V1_SX300.jpg";
+
 const useStyles = makeStyles({
   card: {
     maxWidth: 345
   }
 });
 
-export default function MovieCard(image, title, summary, providers, ...props) {
+export default function MovieCard({movie}) {
   const classes = useStyles();
-
+  const poster =
+  movie.Poster === "N/A" ? DEFAULT_PLACEHOLDER_IMAGE : movie.Poster;
   return (
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia
-          component={image}
+          component="img"
           alt="Movie Poster"
           height="140"
-          image="{url}" //add image url here
-          title={title}
+          image= "{poster}"
+          title={movie.title}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {title}
+            {movie.title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {summary}
+            {movie.summary}
           </Typography>
         </CardContent>
       </CardActionArea>
       <CardActions>
         <ul>
-          {providers.map(item => (
-            <Link to="/${item.url}">
-              <ProviderItem image={item.image}></ProviderItem>
-            </Link>
-          ))}
+          {movie.providers.map(provider => <li>ProviderItem</li>)}
         </ul>
         <Button size="small" color="primary">
-          Read More...
+          <Link to= "/Details">Read More...</Link>
         </Button>
       </CardActions>
     </Card>

@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 
-class ContentPage extends Component {
-  constructor() {
-    super();
+class MovieGrid extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       posterImage: [], //not sure about the types just put array for now
-      movieTitle: [],
-      providers: []
+      title: [],
+      provider: [],
+      release_date : '',
+      duration: '',
+      genre : [],
+      classifications :{}
+
     };
   }
 }
@@ -39,9 +44,7 @@ componentWillMount() {
     render(){
     return(
         <div>
-            <ul>
-
-            </ul>
+            
         </div>
 
     )

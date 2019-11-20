@@ -1,22 +1,21 @@
-const TakeMeHome = ({ title, ...props }) => {
+import React from 'react';
+import SearchBoard from "./molecules/SearchBoard";
+
+
+const BannerBoard = () => {
   return (
     <>
       <div
-        class="cityimage"
+        class="BannerImage"
         style={{
-          backgroundImage: `url(/static/${city}.jpg)`,
+          backgroundImage: `url(/static/${banner}.jpg)`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat"
         }}
       >
-        <div class="currentweather">
-          <CityName city={city} />
-          <TextLink linkType="changecitylink" onButtonClick={onTextLinkClick}>
-            Change
-          </TextLink>
-          <CurrentTemperature temperature={temperature} />
-          {/* <RandoBox /> */}
+        <div class="SearchBoard">
+          <SearchBoard />
           <div class="color-divider"></div>
         </div>
       </div>
@@ -24,4 +23,4 @@ const TakeMeHome = ({ title, ...props }) => {
   );
 };
 
-export default TakeMeHome;
+export default BannerBoard;

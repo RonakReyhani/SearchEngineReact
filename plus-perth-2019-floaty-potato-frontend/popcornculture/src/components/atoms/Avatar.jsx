@@ -1,13 +1,25 @@
-import React from "react";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar';
 
-const Avatar = ({ avatar, ...props }) => {
+
+const useStyles = makeStyles({
+  avatar: {
+    margin: 10,
+  },
+  bigAvatar: {
+    margin: 10,
+    width: 60,
+    height: 60,
+  },
+});
+
+const ImageAvatars = ({ image, ...props }) => { 
+  const classes = useStyles();
   return (
-    <div className="image-cropper">
-      <img src={avatar} className="profile-pic" alt="person profile picture" />
-    </div>
+    
+      <Avatar alt="Remy Sharp" src={image} className={classes.avatar} />
+    
   );
-};
-
-WPAvatar.propTypes = {
-  image: PropTypes.string.isRequired
-};
+}
+export default ImageAvatars;
