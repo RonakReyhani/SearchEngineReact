@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Provider = ({ name,uri, ...props }) => {
   return (
-    <div class="provider">
+    <div className="provider">
       <Link to="{uri}"/>
       <snap>{name}</snap>
     </div>

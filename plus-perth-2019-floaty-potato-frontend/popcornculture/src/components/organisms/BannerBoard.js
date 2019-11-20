@@ -6,7 +6,7 @@ const BannerBoard = () => {
   return (
     <>
       <div
-        class="BannerImage"
+        className="BannerImage"
         style={{
           backgroundImage: `url(/static/${banner}.jpg)`,
           backgroundPosition: "center",
@@ -14,9 +14,9 @@ const BannerBoard = () => {
           backgroundRepeat: "no-repeat"
         }}
       >
-        <div class="SearchBoard">
+        <div className="SearchBoard">
           <SearchBoard />
-          <div class="color-divider"></div>
+          <div className="color-divider"></div>
         </div>
       </div>
     </>

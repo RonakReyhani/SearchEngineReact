@@ -2,7 +2,7 @@ import React from 'react';
 
 const AppFooter = ()=>{
     return (
-        <div class="footer">
+        <div className="footer">
             <snap>All Rights reserved &copy; SheCodesPlus</snap>
 
         </div>

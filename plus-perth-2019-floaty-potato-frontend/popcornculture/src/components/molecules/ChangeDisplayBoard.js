@@ -5,7 +5,7 @@ import SortByAlphaTwoToneIcon from '@material-ui/icons/SortByAlphaTwoTone';
 
 const ChangeDisplay = () =>{
     return(
-        <div class = "">
+        <div className = "changeDisplay">
             <Tooltip title="List View">
                 <IconButton aria-label="List View">
                     <ListAltTwoToneIcon/>
