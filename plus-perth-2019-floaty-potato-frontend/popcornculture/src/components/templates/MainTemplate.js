@@ -4,10 +4,10 @@ import AppFooter from "./molecule/AppFooter";
 
 const MainTemplate = () => {
     return(
-        <div class="">
+        <div>
         <AppNav/>
-        <></>
-        <AppFooter/></div>
+        <AppFooter/>
+        </div>
         
     );
 }
